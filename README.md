@@ -43,7 +43,7 @@ This project simulates a simplified 5-stage MIPS pipeline and compares different
 ## Project Structure
 
 ```text
-Final_Project/
+Pipeline-Project/
 │
 ├── main.cpp
 │
