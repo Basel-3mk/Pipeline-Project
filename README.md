@@ -46,12 +46,14 @@ This project simulates a simplified 5-stage MIPS pipeline and compares different
 Final_Project/
 │
 ├── main.cpp
-├── SOLVE.hpp
-├── INPUT.hpp
-├── DEPENDENCIES.hpp
-├── STALL_FORWARDING.hpp
-├── FORWARDING_REORDERING.hpp
-├── OUTPUT.hpp
+│
+├── headers/
+│   ├── SOLVE.hpp
+│   ├── INPUT.hpp
+│   ├── DEPENDENCIES.hpp
+│   ├── STALL_FORWARDING.hpp
+│   ├── FORWARDING_REORDERING.hpp
+│   └── OUTPUT.hpp
 │
 └── visuals/
     ├── visuals.py
@@ -70,27 +72,27 @@ Final_Project/
 
 The main entry point of the project. It reads the input instructions, calculates dependencies, simulates the pipeline using different techniques, writes output files, and runs the Python visualization script.
 
-### `INPUT.hpp`
+### `headers/INPUT.hpp`
 
 Handles user input. It reads the number of instructions and the instruction lines entered by the user.
 
-### `SOLVE.hpp`
+### `headers/SOLVE.hpp`
 
 Parses and transforms the input instructions into an internal format. It also simulates branch behavior and removes instructions that will not be executed because of taken branches.
 
-### `DEPENDENCIES.hpp`
+### `headers/DEPENDENCIES.hpp`
 
 Detects dependencies between instructions, including RAW, WAR, and WAW dependencies.
 
-### `STALL_FORWARDING.hpp`
+### `headers/STALL_FORWARDING.hpp`
 
 Builds the pipeline table for the Stall + Forwarding technique. It inserts stalls when needed, especially for load-use hazards and branch-related hazards.
 
-### `FORWARDING_REORDERING.hpp`
+### `headers/FORWARDING_REORDERING.hpp`
 
 Builds the pipeline table for the Forwarding + Reordering technique. It attempts to safely reorder instructions to reduce stalls while preserving program correctness.
 
-### `OUTPUT.hpp`
+### `headers/OUTPUT.hpp`
 
 Writes the generated dependency and pipeline data into text files inside the `visuals` folder.
 
@@ -121,6 +123,14 @@ Using g++:
 ```bash
 g++ main.cpp -o main
 ```
+
+If your `main.cpp` includes header files directly by name, for example `#include "SOLVE.hpp"`, compile with the headers folder included:
+
+```bash
+g++ main.cpp -Iheaders -o main
+```
+
+If your `main.cpp` includes them using the folder path, for example `#include "headers/SOLVE.hpp"`, the normal compile command is enough.
 
 ### 2. Run the program
 
