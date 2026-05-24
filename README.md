@@ -124,14 +124,6 @@ Using g++:
 g++ main.cpp -o main
 ```
 
-If your `main.cpp` includes header files directly by name, for example `#include "SOLVE.hpp"`, compile with the headers folder included:
-
-```bash
-g++ main.cpp -Iheaders -o main
-```
-
-If your `main.cpp` includes them using the folder path, for example `#include "headers/SOLVE.hpp"`, the normal compile command is enough.
-
 ### 2. Run the program
 
 ```bash
@@ -213,7 +205,7 @@ loop: add $t1, $t2, $t3
 
 ## Notes
 
-- The maximum number of instructions is 256.
+- The maximum number of instructions is 256 (Can be changed inside the code).
 - The simulator uses a simplified MIPS model for educational purposes.
 - The project focuses on pipeline behavior, dependency analysis, hazard handling, and visualization.
 - Instruction reordering is performed only when it is safe and does not break dependency correctness.
@@ -226,4 +218,4 @@ loop: add $t1, $t2, $t3
 
 ## Author
 
-Developed as a Computer Architecture / MIPS Pipeline Simulation project.
+Developed by Basel Al-Jabari as a Computer Design and Architecture / MIPS Pipeline Simulation project.
