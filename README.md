@@ -219,3 +219,4 @@ loop: add $t1, $t2, $t3
 ## Author
 
 Developed by Basel Al-Jabari as a Computer Design and Architecture / MIPS Pipeline Simulation project.
+.
