@@ -106,5 +106,6 @@ int main() {
   // Run the visual script (Python).
   system("python visuals\\visuals.py");
 
+  // Thank God.
   return 0;
 }
